@@ -5,7 +5,7 @@
     @mouseup="pan && panning && panEndHandler($event)"
   >
     <div
-      class="orgchart"
+      class="orgchart dingflow-design"
       :style="{ transform: transformVal, cursor: cursorVal }"
       @mousedown="pan && panStartHandler($event)"
       @mousemove="pan && panning && panHandler($event)"
@@ -22,6 +22,9 @@
 <script>
 import $ from 'jquery'
 import OrganizationChartNode from './OrganizationChartNode.vue'
+// import OrganizationChartNode from './OrganizationChartNode.vue'
+import '../../static/css/design.css';
+
 
 export default {
   name: 'Container',
@@ -157,6 +160,11 @@ export default {
       let newScale  = 1 + (e.deltaY > 0 ? -0.2 : 0.2)
       this.setChartScale(newScale)
     }
+  },
+  mounted() {
+    setTimeout(()=>{
+      console.log(Object.keys(this.$scopedSlots),'$scopedSlots')
+    },100)
   }
 };
 </script>
@@ -165,7 +173,7 @@ export default {
 .orgchart-container {
   position: relative;
   display: inline-block;
-  height: 420px;
+  height: 100vh;
   width: calc(100% - 24px);
   border: 2px dashed #aaa;
   border-radius: 5px;
