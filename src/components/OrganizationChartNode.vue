@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div v-if="datasource.type!=='route'" class="node-wrap" data-spm-anchor-id="0.0.0.i6.31bc4490aDuVls">
+    <div class="default-recursion">
+        <div v-if="datasource.type!=='route'" class="node-wrap">
             <div class="node-wrap-box node_sid-startevent start-node">
                 <div>
                     <div class="title" style="background: rgb(87, 106, 149);"><span class="">{{datasource.name}}</span></div>
@@ -17,15 +17,17 @@
             <div class="branch-wrap">
                 <div class="branch-box-wrap">
                     <div class="branch-box"><button class="add-branch">添加条件</button>
-                        <div class="col-box" v-for="child in datasource.conditionNodes">
-                            <div class="top-left-cover-line"></div>
-                            <div class="bottom-left-cover-line"></div>
+                        <div class="col-box" v-for="(child, index) in datasource.conditionNodes" :key="index">
+                            <div class="top-left-cover-line" v-if="index===0"></div>
+                            <div class="bottom-left-cover-line" v-if="index===0"></div>
+                            <div class="top-right-cover-line" v-if="index===datasource.conditionNodes.length-1"></div>
+                            <div class="bottom-right-cover-line" v-if="index===datasource.conditionNodes.length-1"></div>
                             <div class="condition-node">
                                 <div class="condition-node-box">
                                     <div class="auto-judge node_f115_cdf3">
                                         <div class="title-wrapper"><span class="editable-title">{{child.name}}</span><span class="priority-title">优先级1</span><i class="anticon anticon-close close"></i></div>
                                         <div class="content">
-                                            <div>住宿费（元） ≥ 1 并且 餐饮费（元） ≥ 1</div>
+                                            <div>{{index===datasource.conditionNodes.length-1}}</div>
                                         </div>
                                         <div class="sort-right">&gt;</div>
                                     </div>

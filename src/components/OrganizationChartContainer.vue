@@ -1,20 +1,22 @@
 <template>
   <div v-bind="{ scopedSlots: $scopedSlots }"
-    class="orgchart-container"
+    class=""
     @wheel="zoom && zoomHandler($event)"
     @mouseup="pan && panning && panEndHandler($event)"
   >
     <div
-      class="orgchart dingflow-design"
+      class="dingflow-design"
       :style="{ transform: transformVal, cursor: cursorVal }"
       @mousedown="pan && panStartHandler($event)"
       @mousemove="pan && panning && panHandler($event)"
     >
+    <div class="box-scale" id="boex-scale" style="transform-origin: 50% 0px 0px; transform: scale(1);">
       <organization-chart-node :datasource="datasource" :handle-click="handleClick">
         <template v-for="slot in Object.keys($scopedSlots)" :slot="slot" slot-scope="scope">
           <slot :name="slot" v-bind="scope"/>
         </template>
       </organization-chart-node>
+    </div>
     </div>
   </div>
 </template>
