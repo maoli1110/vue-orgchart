@@ -1,33 +1,31 @@
 <template>
-    <div class="default-recursion">
-        <div v-if="datasource.type!=='route'" class="node-wrap">
-            <div class="node-wrap-box node_sid-startevent start-node">
-                <div>
-                    <div class="title" style="background: rgb(87, 106, 149);"><span class="">{{datasource.name}}</span></div>
-                    <div class="content">
-                        <div class="text" data-spm-anchor-id="0.0.0.i3.31bc4490aDuVls">毛小喵q99999</div><i class="anticon anticon-right arrow"></i>
+    <div>
+        <div v-for="child in datasourceArr">
+            <div v-if="child.type!=='route'" class="node-wrap">
+                <div class="node-wrap-box node_sid-startevent start-node">
+                    <div>
+                        <div class="title" style="background: rgb(87, 106, 149);"><span class="">{{child.type}}</span></div>
+                        <div class="content">
+                            <div class="text" data-spm-anchor-id="0.0.0.i3.31bc4490aDuVls">毛小喵q99999</div><i class="anticon anticon-right arrow"></i>
+                        </div>
                     </div>
                 </div>
+                <div class="add-node-btn-box">
+                    <div class="add-node-btn"><button class="btn" type="button"><span class="iconfont" data-spm-anchor-id="0.0.0.i10.31bc4490aDuVls"></span></button></div>
+                </div>
             </div>
-            <div class="add-node-btn-box">
-                <div class="add-node-btn"><button class="btn" type="button"><span class="iconfont" data-spm-anchor-id="0.0.0.i10.31bc4490aDuVls"></span></button></div>
-            </div>
-        </div>
-        <template v-if="datasource.type==='route'">
-            <div class="branch-wrap">
+            <div class="branch-wrap" v-if="child.type==='route'">
                 <div class="branch-box-wrap">
                     <div class="branch-box"><button class="add-branch">添加条件</button>
-                        <div class="col-box" v-for="(child, index) in datasource.conditionNodes" :key="index">
-                            <div class="top-left-cover-line" v-if="index===0"></div>
-                            <div class="bottom-left-cover-line" v-if="index===0"></div>
-                            <div class="top-right-cover-line" v-if="index===datasource.conditionNodes.length-1"></div>
-                            <div class="bottom-right-cover-line" v-if="index===datasource.conditionNodes.length-1"></div>
+                        <div class="col-box" v-for="child in child.conditionNodes">
+                            <div class="top-left-cover-line"></div>
+                            <div class="bottom-left-cover-line"></div>
                             <div class="condition-node">
                                 <div class="condition-node-box">
                                     <div class="auto-judge node_f115_cdf3">
                                         <div class="title-wrapper"><span class="editable-title">{{child.name}}</span><span class="priority-title">优先级1</span><i class="anticon anticon-close close"></i></div>
                                         <div class="content">
-                                            <div>{{index===datasource.conditionNodes.length-1}}</div>
+                                            <div>住宿费（元） ≥ 1 并且 餐饮费（元） ≥ 1</div>
                                         </div>
                                         <div class="sort-right">&gt;</div>
                                     </div>
@@ -48,23 +46,21 @@
                     </div>
                 </div>
             </div>
-        </template>
-        <template v-if="datasource.childNode">
-            <node :datasource="datasource.childNode" :handle-click="handleClick">
-                <template v-for="slot in Object.keys($scopedSlots)" :slot="slot" slot-scope="scope">
-                    <slot :name="slot" v-bind="scope" />
-                </template>
-            </node>
-        </template>
-        <!-- div class="end-node">
+        </div>
+        <!-- <div class="end-node">
             <div class="end-node-circle"></div>
-            <div class="end-node-text">流程结束{{datasource.childNode.length}}</div>
+            <div class="end-node-text">流程结束1{{datasource.childNode.length}}</div>
         </div> -->
     </div>
 </template>
 <script>
 export default {
     name: 'node',
+    data() {
+        return {
+            datasourceArr: []
+        }
+    },
     props: {
         datasource: Object,
         handleClick: Function
@@ -72,9 +68,26 @@ export default {
     methods: {
         addCondition(child) {
             console.log(child)
+        },
+
+        // 递归获取第一层childNode
+        getfirstLevelChildNode(ds) {
+            let currentNode = ds.childNode;
+            if (currentNode) {
+                this.datasourceArr.push(currentNode)
+                return this.getfirstLevelChildNode(currentNode)
+            }
         }
     },
     mounted() {
+        // 处理每一层的dataSource数据
+        let datasourceCopy = _.cloneDeep(this.datasource);
+        delete(datasourceCopy.childNode)
+        this.datasourceArr.push(datasourceCopy);
+        this.getfirstLevelChildNode(this.datasource)
+        console.log(this.datasourceArr, 'datasourceArr')
+
+
 
     }
 
