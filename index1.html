@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+</head>
+<body>
+<div>
+</div>
+<script>
+$(function () {
+var data = [
+    {
+       "ID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
+       "PID": "00000000-0000-0000-0000-000000000000",
+       "Name": "四川",
+       "PName": "无",
+       "ComID": ""
+    },
+    {
+      "ID": "6682ceca-e526-4d10-b234-7bfd01126939",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
+      "Name": "成都",
+        "PName": "四川",
+       "ComID": ""
+    },
+    {
+        "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
+       "Name": "绵阳",
+       "PName": "四川",
+       "ComID": ""
+    },
+    {
+       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
+       "Name": "德阳",
+       "PName": "四川",
+       "ComID": ""
+    },
+    {
+       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
+       "Name": "南充",
+       "PName": "四川",
+       "ComID": ""
+    },
+    {
+       "ID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
+       "PID": "00000000-0000-0000-0000-000000000000",
+       "Name": "广东",
+       "PName": "无",
+       "ComID": ""
+    },
+    {
+       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
+       "Name": "广州市",
+       "PName": "广东",
+       "ComID": ""
+    },
+    {
+       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
+       "Name": "深圳市",
+       "PName": "广东",
+       "ComID": ""
+    },
+    {
+       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
+       "Name": "东莞市",
+       "PName": "广东",
+       "ComID": ""
+    },
+    {
+       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
+       "Name": "珠海市",
+       "PName": "广东",
+       "ComID": ""
+    },
+    {
+       "ID": "892d6872-39d2-4a95-aae1-8226bdf268",
+       "PID": "00000000-0000-0000-0000-000000000000",
+       "Name": "重庆市",
+       "PName": "无",
+       "ComID": ""
+    },
+    {
+       "ID": "892d6872-39d2-4a95-aae1-8226b",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
+       "Name": "渝北区",
+       "PName": "重庆市",
+       "ComID": ""
+    },
+    {
+       "ID": "892d6872-39d2-4a95-aae1-8226sssb",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
+       "Name": "渝中区",
+       "PName": "重庆市",
+       "ComID": ""
+    },
+    {
+       "ID": "892d6872-39d2-4a95-aae1-8226sssb",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
+       "Name": "沙坪坝区",
+       "PName": "重庆市",
+       "ComID": ""
+    },
+    {
+     "ID": "892d6872-39d2-4a95-aae1-8226sssb",
+       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
+       "Name": "沙坪坝区",
+       "PName": "重庆市",
+      "ComID": ""
+    }
+];
+// console.log(data);
+var list =[
+    {"id": "1","nodeName":"发起人","type":"TASK_NODE","pid":"0" },
+        {"id": "2","nodeName":"毛小喵1","type":"TASK_NODE","pid":"1" },
+            {"id": "3","nodeName":"分支","type":"JOIN_NODE","pid":"2" },
+                {"id":"line3","prevNodeId":"3","nextNodeId":"4","pid":"3","type":"line"},
+                    {"id": "4","nodeName":"毛小喵2","type":"TASK_NODE","pid":"line3"},
+                        {"id": "5","nodeName":"分支","type":"JOIN_NODE","pid":"4"},
+                            {"id":"line7","prevNodeId":"5","nextNodeId":"6","pid":"5","type":"line"},
+                            {"id":"line8","prevNodeId":"5","nextNodeId":"6","pid":"5","type":"line"},
+
+                            {"id": "6","nodeName":"毛小喵3","type":"TASK_NODE","pid":"5"},
+                            {"id": "7","nodeName":"分支","type":"JOIN_NODE","pid":"6" },
+                                {"id":"line10","prevNodeId":"7","nextNodeId":"8","pid":"7","type":"line"},
+                                {"id":"line11","prevNodeId":"7","nextNodeId":"8","pid":"7","type":"line"},
+                {"id":"line4","prevNodeId":"3","nextNodeId":"8","pid":"3","type":"line"},
+                {"id":"line5","prevNodeId":"3","nextNodeId":"8","pid":"3","type":"line"},
+                {"id": "8","nodeName":"毛小喵4","type":"JOIN_NODE","pid":"3" },
+                    {"id": "9","nodeName":"分支","type":"JOIN_NODE","pid":"8" },
+                        {"id":"line13","prevNodeId":"9","nextNodeId":"10","pid":"9","type":"line"},
+                            {"id": "10","nodeName":"毛小喵5","type":"TASK_NODE","pid":"line13"},
+                        {"id":"line14","prevNodeId":"9","nextNodeId":"11","pid":"9","type":"line"},
+                        {"id": "11","nodeName":"结束","type":"END_NODE","pid":"9" }
+    ]
+/**
+     * 线性数据转化为树
+     * @param {Object} data 源数据
+     * @param {Object} parentKey 父级id key
+     * @param {childrenKey} childrenKey 子集key
+     * @param {Object} pId 父级标识符
+     */
+    function toTree(data, parentKey,childrenKey, pId) {
+        var tree = [];
+        var temp;
+        for (let i = 0; i < 2; i++) {
+            if (data[i][parentKey] == pId) {
+                //console.log(i,'i')
+                var obj = data[i];
+                // console.log(obj,'obj')
+                temp = toTree(data, parentKey,childrenKey,data[i][childrenKey]); // 递归获取当前节点的子节点
+                console.log(temp,'temp')
+
+                // kylee
+                if (temp.length > 0) {
+                    let lineArray=[];
+                    let nodeArray={};
+                    for(let j=0;j<temp.length;j++){
+                        if(temp[j].type=='line'){
+                            lineArray.push(temp[j]);
+                        } else {
+                            nodeArray=temp[j];
+                        }
+                    }
+                    if(lineArray.length>0){
+                        obj.conditions = lineArray; // 分支条件节点
+                    }
+                    if(nodeArray.id){
+                        obj.children = nodeArray;  // 审批人节点&发起人节点
+                    }
+                }
+
+                tree.push(obj);
+
+            }
+        }
+        return tree;
+    }
+    
+    console.log(JSON.stringify(toTree(list,'pid','id','0')));
+    
+    document.write(JSON.stringify(toTree(list,'pid','id','00000000-0000-0000-0000-000000000000')));
+})
+</script>
+</body>
+</html>
