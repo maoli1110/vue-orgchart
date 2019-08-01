@@ -4,143 +4,70 @@
 <meta charset="UTF-8">
 <title>Document</title>
 <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+<script src="https://cdn.bootcss.com/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
+<script>
+    // Your ES6 code
+</script>
 </head>
 <body>
 <div>
 </div>
-<script>
+<script type="text/babel">
 $(function () {
-var data = [
-    {
-       "ID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
-       "PID": "00000000-0000-0000-0000-000000000000",
-       "Name": "四川",
-       "PName": "无",
-       "ComID": ""
-    },
-    {
-      "ID": "6682ceca-e526-4d10-b234-7bfd01126939",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
-      "Name": "成都",
-        "PName": "四川",
-       "ComID": ""
-    },
-    {
-        "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
-       "Name": "绵阳",
-       "PName": "四川",
-       "ComID": ""
-    },
-    {
-       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
-       "Name": "德阳",
-       "PName": "四川",
-       "ComID": ""
-    },
-    {
-       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0a",
-       "Name": "南充",
-       "PName": "四川",
-       "ComID": ""
-    },
-    {
-       "ID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
-       "PID": "00000000-0000-0000-0000-000000000000",
-       "Name": "广东",
-       "PName": "无",
-       "ComID": ""
-    },
-    {
-       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
-       "Name": "广州市",
-       "PName": "广东",
-       "ComID": ""
-    },
-    {
-       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
-       "Name": "深圳市",
-       "PName": "广东",
-       "ComID": ""
-    },
-    {
-       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
-       "Name": "东莞市",
-       "PName": "广东",
-       "ComID": ""
-    },
-    {
-       "ID": "6682ceca-e526-4d10-b234-7bfd0112693",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf28a0",
-       "Name": "珠海市",
-       "PName": "广东",
-       "ComID": ""
-    },
-    {
-       "ID": "892d6872-39d2-4a95-aae1-8226bdf268",
-       "PID": "00000000-0000-0000-0000-000000000000",
-       "Name": "重庆市",
-       "PName": "无",
-       "ComID": ""
-    },
-    {
-       "ID": "892d6872-39d2-4a95-aae1-8226b",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
-       "Name": "渝北区",
-       "PName": "重庆市",
-       "ComID": ""
-    },
-    {
-       "ID": "892d6872-39d2-4a95-aae1-8226sssb",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
-       "Name": "渝中区",
-       "PName": "重庆市",
-       "ComID": ""
-    },
-    {
-       "ID": "892d6872-39d2-4a95-aae1-8226sssb",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
-       "Name": "沙坪坝区",
-       "PName": "重庆市",
-       "ComID": ""
-    },
-    {
-     "ID": "892d6872-39d2-4a95-aae1-8226sssb",
-       "PID": "892d6872-39d2-4a95-aae1-8226bdf268",
-       "Name": "沙坪坝区",
-       "PName": "重庆市",
-      "ComID": ""
-    }
-];
-// console.log(data);
-var list =[
-    {"id": "1","nodeName":"发起人","type":"TASK_NODE","pid":"0" },
-        {"id": "2","nodeName":"毛小喵1","type":"TASK_NODE","pid":"1" },
-            {"id": "3","nodeName":"分支","type":"JOIN_NODE","pid":"2" },
-                {"id":"line3","prevNodeId":"3","nextNodeId":"4","pid":"3","type":"line"},
-                    {"id": "4","nodeName":"毛小喵2","type":"TASK_NODE","pid":"line3"},
-                        {"id": "5","nodeName":"分支","type":"JOIN_NODE","pid":"4"},
-                            {"id":"line7","prevNodeId":"5","nextNodeId":"6","pid":"5","type":"line"},
-                            {"id":"line8","prevNodeId":"5","nextNodeId":"6","pid":"5","type":"line"},
-
-                            {"id": "6","nodeName":"毛小喵3","type":"TASK_NODE","pid":"5"},
-                            {"id": "7","nodeName":"分支","type":"JOIN_NODE","pid":"6" },
-                                {"id":"line10","prevNodeId":"7","nextNodeId":"8","pid":"7","type":"line"},
-                                {"id":"line11","prevNodeId":"7","nextNodeId":"8","pid":"7","type":"line"},
-                {"id":"line4","prevNodeId":"3","nextNodeId":"8","pid":"3","type":"line"},
-                {"id":"line5","prevNodeId":"3","nextNodeId":"8","pid":"3","type":"line"},
-                {"id": "8","nodeName":"毛小喵4","type":"JOIN_NODE","pid":"3" },
-                    {"id": "9","nodeName":"分支","type":"JOIN_NODE","pid":"8" },
-                        {"id":"line13","prevNodeId":"9","nextNodeId":"10","pid":"9","type":"line"},
-                            {"id": "10","nodeName":"毛小喵5","type":"TASK_NODE","pid":"line13"},
-                        {"id":"line14","prevNodeId":"9","nextNodeId":"11","pid":"9","type":"line"},
-                        {"id": "11","nodeName":"结束","type":"END_NODE","pid":"9" }
+var originList = {
+    "processNodeLineList":[
+        {"lineId":"line1","prevNodeId":"1","nextNodeId":"2"},
+        {"lineId":"line2","prevNodeId":"2","nextNodeId":"3"},
+        {"lineId":"line3","prevNodeId":"3","nextNodeId":"4"},
+        {"lineId":"line4","prevNodeId":"3","nextNodeId":"8"},
+        {"lineId":"line5","prevNodeId":"3","nextNodeId":"8"},
+        {"lineId":"line6","prevNodeId":"4","nextNodeId":"5"},
+        {"lineId":"line7","prevNodeId":"5","nextNodeId":"6"},
+        {"lineId":"line8","prevNodeId":"5","nextNodeId":"6"},
+        {"lineId":"line9","prevNodeId":"6","nextNodeId":"7"},
+        {"lineId":"line10","prevNodeId":"7","nextNodeId":"8"},
+        {"lineId":"line11","prevNodeId":"7","nextNodeId":"8"},
+        {"lineId":"line12","prevNodeId":"8","nextNodeId":"9"},
+        {"lineId":"line13","prevNodeId":"9","nextNodeId":"10"},
+        {"lineId":"line14","prevNodeId":"9","nextNodeId":"11"}
+    ],
+    "processNodeList":[
+        {"nodeId": "1","nodeName":"发起人","type":"TASK_NODE"},
+        {"nodeId": "2","nodeName":"毛小喵1","type":"TASK_NODE"},
+        {"nodeId": "3","nodeName":"分支","type":"JOIN_NODE" },
+        {"nodeId": "4","nodeName":"毛小喵2","type":"TASK_NODE"},
+        {"nodeId": "5","nodeName":"分支","type":"JOIN_NODE"},
+        {"nodeId": "6","nodeName":"毛小喵3","type":"TASK_NODE"},
+        {"nodeId": "7","nodeName":"分支","type":"JOIN_NODE"},
+        {"nodeId": "8","nodeName":"毛小喵4","type":"JOIN_NODE" },
+        {"nodeId": "9","nodeName":"分支","type":"JOIN_NODE" },
+        {"nodeId": "10","nodeName":"毛小喵5","type":"TASK_NODE"},
+        {"nodeId": "11","nodeName":"结束","type":"END_NODE"}
     ]
+}
+var list =[
+{"id": "1","nodeName":"发起人","type":"TASK_NODE","pid":"0" },
+    {"id": "2","nodeName":"毛小喵1","type":"TASK_NODE","pid":"1" },
+        {"id": "3","nodeName":"分支","type":"JOIN_NODE","pid":"2" },
+            {"id":"line3","prevNodeId":"3","nextNodeId":"4","pid":"3","type":"line"},
+                {"id": "4","nodeName":"毛小喵2","type":"TASK_NODE","pid":"line3"},
+                    {"id": "5","nodeName":"分支","type":"JOIN_NODE","pid":"4"},
+                        {"id":"line7","prevNodeId":"5","nextNodeId":"6","pid":"5","type":"line"},
+                        {"id":"line8","prevNodeId":"5","nextNodeId":"6","pid":"5","type":"line"},
+
+                        {"id": "6","nodeName":"毛小喵3","type":"TASK_NODE","pid":"5"},
+                        {"id": "7","nodeName":"分支","type":"JOIN_NODE","pid":"6" },
+                            {"id":"line10","prevNodeId":"7","nextNodeId":"8","pid":"7","type":"line"},
+                            {"id":"line11","prevNodeId":"7","nextNodeId":"8","pid":"7","type":"line"},
+            {"id":"line4","prevNodeId":"3","nextNodeId":"8","pid":"3","type":"line"},
+            {"id":"line5","prevNodeId":"3","nextNodeId":"8","pid":"3","type":"line"},
+            {"id": "8","nodeName":"毛小喵4","type":"JOIN_NODE","pid":"3" },
+                {"id": "9","nodeName":"分支","type":"JOIN_NODE","pid":"8" },
+                    {"id":"line13","prevNodeId":"9","nextNodeId":"10","pid":"9","type":"line"},
+                        {"id": "10","nodeName":"毛小喵5","type":"TASK_NODE","pid":"line13"},
+                    {"id":"line14","prevNodeId":"9","nextNodeId":"11","pid":"9","type":"line"},
+                    {"id": "11","nodeName":"结束","type":"END_NODE","pid":"9" }
+];
 /**
      * 线性数据转化为树
      * @param {Object} data 源数据
@@ -188,6 +115,29 @@ var list =[
     console.log(JSON.stringify(toTree(list,'pid','id','0')));
     
     document.write(JSON.stringify(toTree(list,'pid','id','00000000-0000-0000-0000-000000000000')));
+
+
+    function addPrevNodeId() {
+        // originList.processNodeList.forEach(item => {
+        //    let prevNodeId = originList.processNodeLineList.filter(item1=>{
+        //         return item1.nextNodeId = item.id;
+        //     })
+        //     console.log(prevNodeId,'prevNodeId')
+
+        //     item.prevNodeId = prevNodeId
+        // });
+        originList.processNodeList.forEach(function(item) {
+            let prevNodeId = originList.processNodeLineList.filter(function (item1) {
+                return item1.nextNodeId = item.id;
+            })
+            console.log(prevNodeId,'prevNodeId')
+            item.prevNodeId = prevNodeId
+        });
+    }
+
+
+    addPrevNodeId();
+    console.log(originList.processNodeList,'processNodeList')
 })
 </script>
 </body>

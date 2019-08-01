@@ -1,9 +1,9 @@
 <template>
     <div class="default-recursion">
-        <div v-if="datasource.type!=='route'" class="node-wrap">
+        <div v-if="datasource.type!=='JOIN_NODE'" class="node-wrap">
             <div class="node-wrap-box node_sid-startevent start-node">
                 <div>
-                    <div class="title" style="background: rgb(87, 106, 149);"><span class="">{{datasource.name}}</span></div>
+                    <div class="title" style="background: rgb(87, 106, 149);"><span class="">{{datasource.nodeName}}</span></div>
                     <div class="content">
                         <div class="text" data-spm-anchor-id="0.0.0.i3.31bc4490aDuVls">毛小喵q99999</div><i class="anticon anticon-right arrow"></i>
                     </div>
@@ -13,7 +13,7 @@
                 <div class="add-node-btn"><button class="btn" type="button"><span class="iconfont" data-spm-anchor-id="0.0.0.i10.31bc4490aDuVls"></span></button></div>
             </div>
         </div>
-        <template v-if="datasource.type==='route'">
+        <template v-if="datasource.type==='JOIN_NODE'">
             <div class="branch-wrap">
                 <div class="branch-box-wrap">
                     <div class="branch-box"><button class="add-branch">添加条件</button>
@@ -25,7 +25,7 @@
                             <div class="condition-node">
                                 <div class="condition-node-box">
                                     <div class="auto-judge node_f115_cdf3">
-                                        <div class="title-wrapper"><span class="editable-title">{{child.name}}</span><span class="priority-title">优先级1</span><i class="anticon anticon-close close"></i></div>
+                                        <div class="title-wrapper"><span class="editable-title">{{child.nodeName}}</span><span class="priority-title">优先级1</span><i class="anticon anticon-close close"></i></div>
                                         <div class="content">
                                             <div>{{index===datasource.conditionNodes.length-1}}</div>
                                         </div>
